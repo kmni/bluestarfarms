@@ -126,10 +126,10 @@ var hju	= {
 		if ($(selector).length > 0)
 		{
 			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			dsq.src = '/js/owl.carousel/owl.carousel.min.js';
+			dsq.src = 'js/owl.carousel/owl.carousel.min.js';
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			dsq.onload=function(){hju.loadCss({href:'/js/owl.carousel/assets/owl.carousel.min.css'}); hju.owl()};
-			dsq.onreadystatechange=function(){if(dsq.readyState=='loaded'){hju.loadCss({href:'/js/owl.carousel/assets/owl.carousel.min.css'}); hju.owl();}};
+			dsq.onload=function(){hju.loadCss({href:'js/owl.carousel/assets/owl.carousel.min.css'}); hju.owl()};
+			dsq.onreadystatechange=function(){if(dsq.readyState=='loaded'){hju.loadCss({href:'js/owl.carousel/assets/owl.carousel.min.css'}); hju.owl();}};
 		}
 	},
 	
@@ -138,11 +138,11 @@ var hju	= {
 		{
 
 			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			dsq.src = '/js/magnific.popup.min.js';
+			dsq.src = 'js/magnific.popup.min.js';
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 			// dsq.onload=hju.magnific;
-			dsq.onload=function(){hju.loadCss({href:'/css/magnific-popup.min.css'}); hju.magnific();};
-			dsq.onreadystatechange=function(){if(dsq.readyState=='loaded'){hju.loadCss({href:'/css/magnific-popup.min.css'});hju.magnific();}};
+			dsq.onload=function(){hju.loadCss({href:'css/magnific-popup.min.css'}); hju.magnific();};
+			dsq.onreadystatechange=function(){if(dsq.readyState=='loaded'){hju.loadCss({href:'css/magnific-popup.min.css'});hju.magnific();}};
 		}		
 	},
 

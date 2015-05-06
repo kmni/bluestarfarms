@@ -1,0 +1,53 @@
+#enable gzip compression
+AddOutputFilterByType DEFLATE text/html text/xhtml text/plain text/javascript text/css image/jpeg image/png image/gif image/svg+xml application/x-javascript
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4.0[678] no-gzip
+BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault A600
+	ExpiresByType text/javascript A31536000
+	ExpiresByType application/javascript A31536000
+	ExpiresByType text/css A1209600
+	ExpiresByType image/gif A1209600
+	ExpiresByType image/png A1209600
+	ExpiresByType image/jpeg A1209600
+	ExpiresByType image/x-icon A1209600
+	ExpiresByType image/svg A1209600
+	ExpiresByType text/html A1
+	#ExpiresByType text/javascript A0
+	#ExpiresByType application/javascript A0
+
+	ExpiresByType application/x-font-ttf "access plus 1 month"
+	ExpiresByType font/opentype "access plus 1 month"
+	ExpiresByType application/x-font-woff "access plus 1 month"
+	ExpiresByType image/svg+xml "access plus 1 month"
+	ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+
+</IfModule>
+
+<IfModule pagespeed_module>
+    # Turn on mod_pagespeed. To completely disable mod_pagespeed, you
+    # can set this to "off".
+    ModPagespeed on
+	ModPagespeedEnableFilters extend_cache
+
+    # Settings for image optimization:
+    # 
+    # Jpeg recompression quality (0 to 100, -1 strips metadata):
+	ModPagespeedEnableFilters recompress_images
+	ModPagespeedEnableFilters recompress_png
+	ModPagespeedEnableFilters resize_images
+	ModPagespeedEnableFilters convert_jpeg_to_progressive
+	ModPagespeedEnableFilters recompress_jpeg
+    ModPagespeedJpegRecompressionQuality 85
+</IfModule>
+
+RewriteEngine On
+
+RewriteBase /
+
+	# automatic www if not having subdomain
+	RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,QSA,L]

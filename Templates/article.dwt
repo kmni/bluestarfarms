@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- TemplateBeginEditable name="doctitle" -->
+	<title>Blue Star Farms</title>
+	<!-- TemplateEndEditable -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <script src="../js/hju.js"></script>
+	<!-- TemplateBeginEditable name="head" -->
+	<!-- TemplateEndEditable -->
+</head>
+
+<body>
+	
+	<div class="container header">
+		<div class="content header_content clearfix">
+			<a class="header__logo" href="../index.html" title="Blue Star Farms"><img src="../images/logo-blue-star-farms.png" alt="Blue Star Farms"></a>
+			
+			<div class="header__navigation">
+				<ul class="mobile_menu">
+					<li><a href="index.html" title="Show navigation"><span>MENU</span></a></li>
+				</ul>
+				<ul class="main_menu clearfix">
+					<li><a href="../legacy/index.html">Legacy</a></li>
+                    <li><a href="../sales/index.html" title="Sales">Sales</a></li>
+					<li><a href="../horses/mares.html" title="Mares">Mares</a></li>
+					<li><a href="../horses/foals.html" title="Foals">Foals</a></li>
+					<li><a href="../horses/stallions.html" title="Stallions">Stallions</a></li>
+					<li><a href="../news/index.html" title="News">News</a></li>
+					<li><a href="../contact/index.html" title="Contact">Contact</a></li>
+				</ul>
+			</div> <!--// .header__navigation -->
+
+		</div> <!--// .header_content -->
+	</div> <!--// .header-->
+
+	<div class="container main">
+		<div class="container article">
+			<div class="content article_content">
+				<div class="article__inner">
+					<!-- TemplateBeginEditable name="heading" --><h1>HEADING</h1><!-- TemplateEndEditable -->
+                    <!-- TemplateBeginEditable name="subtitle" --><div class="subtitle">march 20, 2015</div><!-- TemplateEndEditable -->
+                    <!-- TemplateBeginEditable name="content" -->
+                    
+                    
+                    CONTENT GOES HERE
+                    
+                    
+                    <!-- TemplateEndEditable -->
+				</div> <!--// .article__inner -->
+			</div> <!--// .article_content -->
+		</div> <!--// .article -->
+	</div> <!--// .main -->
+
+	<div class="container footer">
+		<div class="content footer_content clearfix">
+			<a class="footer__logo" href="" title=""><img src="../images/footer-logo.png" alt="Blue Star Farms"></a>
+			<div class="footer__copyright">
+				<h3 class="copyright__title">Blue Star Farms</h3>
+				<p>949.370.8254 • bill and nan bensyl • murrieta, ca</p>
+			</div>
+			<div class="footer__author">&copy; kmni designed.</div>
+		</div> <!--// .footer -->
+	</div> <!--// .footer -->
+
+	<script id="async">
+		var js_files	= ['http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', '/js/hju.js'],
+			s0			= document.getElementById('async');
+		for (var i = 0; i < js_files.length; i++){
+			if (js_files[i] != ""){
+				var sNew=document.createElement("script");sNew.async=false;sNew.src=js_files[i];s0.parentNode.insertBefore(sNew,s0);
+			}
+		}
+	</script>
+
+</body>
+</html>
+

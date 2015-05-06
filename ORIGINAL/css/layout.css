@@ -1,5 +1,11 @@
 @font-face {
-    font-family: 'Lora', serif;
+    font-family: 'goudy_trajan_regularregular';
+    src: url('GoudyTrajan-Regular-trial-webfont.eot');
+    src: url('GoudyTrajan-Regular-trial-webfont.eot?#iefix') format('embedded-opentype'),
+         url('GoudyTrajan-Regular-trial-webfont.woff2') format('woff2'),
+         url('GoudyTrajan-Regular-trial-webfont.woff') format('woff'),
+         url('GoudyTrajan-Regular-trial-webfont.ttf') format('truetype'),
+         url('GoudyTrajan-Regular-trial-webfont.svg#goudy_trajan_regularregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -7,7 +13,7 @@
 
 html, body {padding: 0; margin: 0;}
 html {background: url(../images/blue-star-farms-website-background-repeatable.jpg) center top repeat-y;}
-body {font-family: font-family: 'Lora', serif, sans-serif; background: url(../images/blue-star-farms-website-background-landscape.png) center bottom no-repeat; margin-bottom: 157px;}
+body {font-family: 'goudy_trajan_regularregular', sans-serif; background: url(../images/blue-star-farms-website-background-landscape.png) center bottom no-repeat; margin-bottom: 157px;}
 @media (max-width: 600px) {
 	body {margin-bottom: 0;}
 }
@@ -122,7 +128,7 @@ p {font-size: 24px; line-height: 38px; color: #282828; text-indent: 36px; paddin
 
 .list {}
 .list_content {padding: 76px 0 60px;}
-.list_content h1 {font-size: 40px; line-height: 46px; color: #990202; text-align: left; text-transform: uppercase; padding: 0; margin: 0 0 34px;}
+.list_content h1 {font-size: 40px; line-height: 46px; color: #f3f3ed; text-align: center; text-transform: uppercase; padding: 0; margin: 0 0 34px;}
 .list__item {position: relative; background: #f3f3ed url(../images/bg-list-item.jpg) 0 0 no-repeat; background-size: 28.66%; margin: 24px 0 0;}
 .item__image {float: left; width: 28.66%;}
 .item__image img {display: block; max-width: 100%; height: auto;}

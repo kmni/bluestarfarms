@@ -1,0 +1,50 @@
+/* Colors Used
+very drk blue	#334c6a			khaki		#c6bc7f			ltred		#c09698
+dark blue	#405f84			orange		#e9b978			rust		#db4519
+light blue	#4c709d			lt green	#e0e0ae			burgundy	#a7284f
+yellow		#f5f5c2			brown		#723629
+
+Box Border and Title 	#CCCC99
+Box Background		#EEE8AA
+Box Alt Background	#F5F5C2
+Box Header Text		#270E0E Almost Black
+Box Text		#723629 Dk Red
+Form Box Text		#000000 Black
+Highlight Red		#CC0000 Red
+*/
+
+BODY { 	font-size: 13px; font-family: Arial, Helvetica, Geneva, sans-serif;
+	}
+P, TD, UL, LI, H2, H3, H4, H5, H6 {	font-family: Arial, Helvetica, Geneva, sans-serif}
+
+P  { font-size: 12px}
+TD { font-size: 13px; vertical-align: top;}
+UL { font-size: 12px}
+LI { font-size: 12px}
+H1 { font-weight: bold; font-size: 20px; font-family: "Times New Roman", Times, Georgia, serif; }	
+H2 { font-weight: bold; font-size: 20px; }
+H3 { font-size: 16px}
+H4 { font-size: 14px}
+
+A:link, A:visited	{ font-weight: bold; text-decoration: none; color:black;}
+A:active, A:hover	{ font-weight: bold; text-decoration: none; color:black;}
+
+.align_right {text-align: right;}
+.center {text-align: center;}
+.AlphaPlex {font-weight: bold; font-size: 8px;}
+.Time {font-size: 10px; font-style: italic;}
+
+.BoxTable {width: 135px; background: #EEE8AA; border: 2px solid #CCCC99; margin: 0px 5px 10px 5px;}
+.BoxTitle {height: 20px; font-weight: bold; font-size: 13px; font-family: Georgia;
+	   background: url(images/triangle_head.gif) no-repeat top left #CCCC99;
+	   color: #270E0E; padding: 5px 5px 5px 30px; text-transform: uppercase;}
+	A.BoxTitleL:link, A.BoxTitleL:visited	{ font-weight: bold; font-size: 13px; text-decoration: none; }
+	A.BoxTitleL:active, A.BoxTitleL:hover	{ font-weight: bold; font-size: 13px; text-decoration: underline;}
+.BoxText {background: #E9DD96; font-size: 11px; color: #723629; padding: 3px;}
+	A.BoxLink:link, A.BoxLink:visited	{ font-size: 11px; text-decoration: none; color:}
+	A.BoxLink:active, A.BoxLink:hover	{ font-size: 11px; text-decoration: underline; color:}
+
+.TitleA {font-style: italic; font-weight: bold; font-size: 17px; font-family: Arial;}
+.TitleB {font-weight: bold; font-size: 17px; font-style: italic;}
+.TitleB2 {font-weight: bold; font-size: 15px;}
+.RedTitle {font-weight: bold; font-size: 12px;}
