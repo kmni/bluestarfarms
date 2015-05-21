@@ -181,7 +181,7 @@ p {font-size: 18px; line-height: 38px; color: #282828; padding: 0; margin: 0 0 3
 
 .detail__item {background: #dadadb;}
 .detail__item .item__info {width: 66.67%; padding: 8.5% 2.33% 2.33%;}
-.detail__item .item__info .button {display: none;}
+.detail__item .item__info .button {}
 .detail__item .item__subtitle {padding-bottom: 30px;}
 .detail__item .item__date {margin-bottom: 60px;}
 .detail__owl {padding: 8px 0 6px;}
