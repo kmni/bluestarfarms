@@ -68,6 +68,7 @@ var hju	= {
 
 	owl: function(){
 		// console.log('owl ready');
+		$('.owl_demo').removeClass('nos');
 		$('.owl_demo').owlCarousel({ 
 			items:				parseInt($('.owl_demo').data('items')) || 6,
 			autoplay:			$('.owl_demo').data('interval') ? true : false, //Set AutoPlay to 4 seconds
@@ -81,20 +82,15 @@ var hju	= {
 			responsive:{
 				0:{
 					items:	3,
-					nav:	$('.owl_demo').data('nav') || false,
 				},
 				600:{
 					items:	4,
-					nav:	$('.owl_demo').data('nav') || false,
 				},
 				800:{
 					items:	6,
-					nav:	$('.owl_demo').data('nav') || false,
 				},
 				1200:{
 					items:	parseInt($('.owl_demo').data('items')) || 6,
-					nav:	$('.owl_demo').data('nav') || false,
-					loop:	true
 				}
 			}
 		});
@@ -111,6 +107,116 @@ var hju	= {
 			preloader: false,
 			fixedContentPos: false
 		});
+	},
+
+	responsiveVideo:	function(){
+		// Find all YouTube / Vimeo videos
+		var videos = $("iframe[src*='//player.vimeo.com'], iframe[src*='//www.youtube.com']");
+
+		// Figure out and save aspect ratio for each video
+		videos.each(function() {
+
+		  $(this).data('aspectRatio', this.height / this.width)
+			// and remove the hard coded width/height
+			.removeAttr('height')
+			.removeAttr('width');
+		});
+
+		// When the window is resized
+		$(window).resize(function() {
+			// Resize all videos according to their own aspect ratio
+			videos.each(function() {
+				var video	= $(this),
+					parent	= video.parent();
+				video.width(parent.width()).height(parent.width() * video.data('aspectRatio'));
+			});
+		// Kick off one resize to fix all videos on page load
+		}).resize();
+	},
+
+	// handle some stuff on horse's detail page
+	horseDetail:	function(){
+		var	detail	= $('.detail_content');
+		
+		detail.init	= function(){
+			detail.prevNext();
+			detail.kejkle();
+		};
+
+		// create prev & next links in the top of the detail content
+		detail.prevNext	= function(){
+			var	prev	= detail.data('prev') || false,
+				next	= detail.data('next') || false;
+
+			if (prev)
+				detail.prepend('<a class="detail__navi prev" href="'+prev+'">Previous</a>');
+			if (next)
+				detail.prepend('<a class="detail__navi next" href="'+next+'">Next</a>');
+		};
+
+		// inserts pedigree table & video into horse detail page
+		detail.kejkle	= function(){
+			// find pedigree and video buttons
+			var	container	= $('.detail_content'),
+				pedigree	= $('.detail__item .popup_text') || false,
+				video		= $('.detail__item .popup_video') || false;
+
+			function youtubeParser(url)
+			{
+				var match = url.match(/(youtu(?:\.be|be\.com)\/(?:.*v(?:\/|=)|(?:.*\/)?)([\w'-]+))/i);
+				// console.log(match);
+				if (match && match[2].length==11){
+					return match[2];
+				}
+				return false;
+			}
+			function vimeoParser(url)
+			{
+				var match = url.match(/vimeo.com\/([^\^]+)/i);
+				// console.log(match);
+				if (match && match[1].length > 0)
+					return match[1];
+				
+				return false;	
+			}
+
+			if (pedigree)
+			{
+				// insert pedigree iframe into content
+				container.append('<div class="detail__text"><iframe class="pedigree" src="'+pedigree.attr('href')+'" frameborder="0"></iframe></div>');
+				var iframe	= $('iframe.pedigree');
+				iframe.load(function(){ iframe.height(iframe.contents().find('body').height()); });
+				
+				// $('iframe.pedigree').height($('iframe.pedigree').contents().find('body').height());
+				// hide pedigree button
+				pedigree.addClass('nos');
+			}
+			if (video)
+			{
+				// vimeo video
+				if (video.is('[href*="vimeo.com/"]'))
+				{
+					var id	= vimeoParser(video.attr('href'));
+					if (id)
+					{
+						container.append('<div class="detail__text"><iframe src="https://player.vimeo.com/video/'+id+'?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>');
+					}
+				}
+				// youtube video
+				else if (video.is('[href*="youtube.com/watch"]'))
+				{
+					var id	= youtubeParser(video.attr('href'));
+					if (id)
+						container.append('<div class="detail__text"><iframe width="960" height="720" src="https://www.youtube.com/embed/'+id+'" frameborder="0" allowfullscreen></iframe></div>');
+				}
+				// hide video button
+				video.addClass('nos');
+				// make video responsive
+				hju.responsiveVideo();
+			}
+		};
+
+		detail.init();
 	},
 	
 	initGmap:	function(selector){
@@ -167,6 +273,8 @@ var hju	= {
 		this.initOwl('.owl_demo');
 		this.initMagnific('.popup_image, .popup_text, .popup_video');
 		this.initGmap('div.gmap');
+		this.responsiveVideo();
+		this.horseDetail();
 	}
 };
 $(document).ready(function(){hju.init();});

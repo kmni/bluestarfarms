@@ -1,9 +1,29 @@
+/* Google Web Fonts */
 @font-face {
-    font-family: 'Playfair Display', serif;
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display'), local('PlayfairDisplay-Regular'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr9bm1CRD8Ne_KjP89kA3_zOrHj8E.woff2) format('woff2'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr9bm1CV4QaRhHkZLZrsruvIjJ6Xo.woff) format('woff');
 }
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/UC3ZEjagJi85gF9qFaBgIN4KoCs5_BuQksQmhwRAS2Y.woff2) format('woff2'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/UC3ZEjagJi85gF9qFaBgIAjfA_CkPizPaBJKI36cCAY.woff) format('woff');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/9MkijrV-dEJ0-_NWV7E6NzyJGU1P5M-LlUrAn6CnO9E.woff2) format('woff2'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/9MkijrV-dEJ0-_NWV7E6N9QroGjXLbbdFByKqKsSrKI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Playfair Display Bold Italic'), local('PlayfairDisplay-BoldItalic'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/n7G4PqJvFP2Kubl0VBLDEC0yrwWnmFtrYD74X1HK8I6glnMp3_3A8V8Ai8YosRtX.woff2) format('woff2'), url(http://fonts.gstatic.com/s/playfairdisplay/v10/n7G4PqJvFP2Kubl0VBLDENo6rfrboWJUlegBR-uMPb6glnMp3_3A8V8Ai8YosRtX.woff) format('woff');
+}
+
 
 html, body {padding: 0; margin: 0;}
 html {background: url(../images/blue-star-farms-website-background-repeatable.jpg) center top repeat-y;}
@@ -12,10 +32,12 @@ body {font-family: 'Playfair Display', serif, sans-serif; background: url(../ima
 	body {margin-bottom: 0;}
 }
 
-h1 {font-size: 30px; line-height: 46px; font-weight: 300; color: #253765; text-align: center; padding: 0; margin: 0 0 36px;}
-p {font-size: 18px; line-height: 38px; color: #282828; text-indent: 36px; padding: 0; margin: 0 0 36px;}
+h1 {font-size: 30px; line-height: 46px; font-weight: 400; color: #253765; text-align: center; padding: 0; margin: 0 0 36px;}
+hr {border: 0; height: 1px; background: #333; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.3));}
+p {font-size: 18px; line-height: 38px; color: #282828; padding: 0; margin: 0 0 36px;}
+.indent {text-indent: 36px;}
 @media (max-width: 600px) {
-	p {text-indent: 0;}
+	.indent {text-indent: 0;}
 }
 .center {text-align: center;}
 .button {display: inline-block; width: 46%; font-size: 18px; line-height: 62px; letter-spacing: 1px; color: #dadadb; text-decoration: none; text-align: center; text-transform: uppercase; background: #001345; padding: 0; margin: 1.5%;}
@@ -78,6 +100,7 @@ p {font-size: 18px; line-height: 38px; color: #282828; text-indent: 36px; paddin
 	.mobile_menu a {padding-right: 0; padding-left: 32px;}
 }
 .main {padding: 0;}
+.homepage {background: url(../images/homepage-horse-left.png) left top no-repeat, url(../images/homepage-horse-right.png) right top no-repeat; background-size: contain;}
 .homepage_content {position: relative; /*min-height: 840px;*/ text-align: center; transform-style: preserve-3d; padding: 60px 0;}
 .homepage__logo {position: relative; overflow: hidden; width: 40%; max-width: 700px; margin: 0 auto;}
 .homepage__logo img {max-width: 100%; height: auto;}
@@ -113,16 +136,23 @@ p {font-size: 18px; line-height: 38px; color: #282828; text-indent: 36px; paddin
 
 .article {padding: 132px 20px 53px;}
 .article_content {background: #fff;}
-.article__inner {padding: 5.5% 5.5% 2%;}
+.article__inner {width: 70%; margin: 0 auto; padding: 5.5% 0 2%;}
 .article_content h1 {margin-bottom: 5px;}
 .article_content .subtitle {font-size: 18px; line-height: 22px; color: #282828; text-align: center; background: url(../images/bg-subtitle.png) center bottom no-repeat; padding: 0 0 28px; margin: 0 0 50px;}
-.article_content p {}
+.article_content p {text-align: left;}
 .article_content p img {margin-left: -36px;}
+.article_content p.author {font-size: 16px; font-style: italic; text-align: right;}
+@media (max-width: 600px) {
+	.article_content p img {margin-left: 0;}
+}
 
 .list {}
 .list_content {padding: 76px 0 60px;}
-.list_content h1 {font-size: 30px; line-height: 30px; color: #990202; text-align: left; padding: 0; margin: 0 0 34px;}
+.list_content h1 {font-size: 30px; line-height: 30px; color: #6F1516;/*#990202;*/ text-align: left; padding: 0; margin: 0 0 34px;}
+.list_content > h2 {font-weight: 400; color: #fff;}
+.list_content > h2 em {font-weight: 400; font-style: italic; font-size: 18px;}
 .list__item {position: relative; background: #f3f3ed url(../images/bg-list-item.jpg) 0 0 no-repeat; background-size: 28.66%; margin: 24px 0 0;}
+.list__item.last {margin-bottom: 60px;}
 .item__image {float: left; width: 28.66%;}
 .item__image img {display: block; max-width: 100%; height: auto;}
 .item__info {float: right; width: 55.17%; text-align: center; padding: 7% 10.5% 0 5.66%;}
@@ -137,18 +167,28 @@ p {font-size: 18px; line-height: 38px; color: #282828; text-indent: 36px; paddin
 	.item__image {float: none; width: 100%; text-align: center; margin: 0;}
 	.item__image img {margin: 0 auto;}
 	.item__info {float: none; width: 90%; text-align: center; padding: 30px 5% 50px;}
-	.item__link {background: url(../images/bg-list-link-arrow.png) center bottom no-repeat, url(../images/bg-list-link-responsive.png) left bottom repeat-x, url(../images/bg-list-item--responsive-hover.png) left bottom repeat-x;}
+	.item__link {background: url(../images/bg-list-link-arrow.png) center bottom no-repeat, url(../images/bg-list-link-responsive.png) left bottom repeat-x, url(../images/bg-list-item-responsive-hover.png) left bottom repeat-x;}
 	.item__link:hover {background: url(../images/bg-list-link-arrow.png) center bottom no-repeat, url(../images/bg-list-item-responsive-hover.png) left bottom repeat-x;}
 }
 
 .detail {padding: 76px 0 60px;}
-.detail_content {background: #f2efea; padding-bottom: 1px;}
+.detail_content {position:relative; background: #f2efea; padding-bottom: 1px;}
+
+.detail_content .detail__navi {display: block; position: absolute; top: -40px; right: 0; width: 140px; height: 40px; font-size: 16px; line-height: 40px; color: #fff; text-align: center; text-decoration: none; background: url(../images/bg-list-link-arrow.png) right center no-repeat, url(../images/bg-list-link.png) right top repeat, url(../images/bg-list-item-hover.png) right top repeat; padding: 0;}
+.detail_content .detail__navi.prev {left: 0; right: auto; background: url(../images/bg-list-link-arrow-left.png) left center no-repeat, url(../images/bg-list-link.png) right top repeat;}
+.detail_content .detail__navi:hover {background: url(../images/bg-list-link-arrow.png) right center no-repeat, url(../images/bg-list-item-hover.png) right top repeat;}
+.detail_content .detail__navi.prev:hover {background: url(../images/bg-list-link-arrow-left.png) left center no-repeat, url(../images/bg-list-item-hover.png) right top repeat;}
+
 .detail__item {background: #dadadb;}
-.detail__item .item__info {width: 66.67%; padding: 8.5% 2.33% 0;}
+.detail__item .item__info {width: 66.67%; padding: 8.5% 2.33% 2.33%;}
+.detail__item .item__info .button {display: none;}
 .detail__item .item__subtitle {padding-bottom: 30px;}
 .detail__item .item__date {margin-bottom: 60px;}
 .detail__owl {padding: 8px 0 6px;}
 .detail__text {box-shadow: 0 0 0 1px #fff; padding: 5.16% 4.3%; margin: 20px;}
+.detail__text iframe {max-width: 100%; margin: 20px auto 0;}
+.detail__text iframe:first-child {margin-top: 0;}
+.detail__text iframe.pedigree {width: 100%; height: 600px; margin: 20px auto 0;}
 @media (max-width: 600px) {
 	.detail__item .item__info {width: 90%; padding: 30px 5%;}
 }
@@ -181,9 +221,11 @@ p {font-size: 18px; line-height: 38px; color: #282828; text-indent: 36px; paddin
 
 *:focus {outline: none;}
 *::-moz-focus-inner {border: 0;}
+.nos {display: none;}
 .cleaner {clear: both; line-height: 0px; font-size: 0px;}
 .clear,
 br.clear {clear: both; line-height: 0;_height: 0px; font-size: 0px; padding: 0; margin: 0;}
 .clearfix:before,.clearfix:after {content: " "; display: table;}
 .clearfix:after {clear: both;}
 .clearfix {*zoom: 1;}
+.center {text-align: center;}
